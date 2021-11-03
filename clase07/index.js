@@ -1,20 +1,16 @@
-const express = require('express');
-const Contenedor = require('./contenedor');
+const express = require("express");
 
-const contenedor = new Contenedor('./productos.txt')
 const app = express();
+const products = require("./routes/productos");
+const port = process.env.PORT || 8080;
 
-const PORT = 3005 || process.env.PORT;
+app.use("/static", express.static(__dirname + "/public"));
 
-app.get('/productos', async (req,res) => {
-      res.send(await contenedor.getAll());
+app.use(express.json());
+app.use(express.urlencoded(false));
+
+app.use("/api/productos", products);
+
+app.listen(port, () => {
+  console.log(`Server run on port ${port}`);
 });
-
-app.get('/productoRandom', async (req,res) => {
-      res.send(await contenedor.getRandomItem());
-})
-const server = app.listen(PORT, () => {
-      console.log(`El servidor se encuentra escuchando por el puerto ${server.address().port}`)
-});
-
-server.on("Error", error => console.log(`Error en servidor ${error}`));

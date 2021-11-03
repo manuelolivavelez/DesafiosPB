@@ -61,24 +61,30 @@ class Contenedor {
       }
   }
 
-  async deleteAll() {
-    await writeFileAsync(this.pr, [])
-  }
-
-  async getRandomItem() {
+  async updateById(id, arr) {
     let fileExits = await readFileAsync();
-    let dataFile = JSON.parse(fileExits);
-    let randomItem = parseInt(Math.floor(Math.random() * (dataFile.length)));
-    console.log(dataFile[randomItem]);
-    console.log(randomItem);
-  }
+    if (fileExits && fileExits.length >= 0) {
+      let fileData = JSON.parse(fileExits);
+      let i;
+      fileData.find((product, index) => {
+        if (product.id == id) {
+          i = index;
+          return i;
+        }
+      });
+      fileData[i].title = arr.title;
+      fileData[i].price = arr.price;
+      fileData[i].thumbnail = arr.thumbnail;
+      writeProductFile(fileData);
+    }
+  } 
 }
 
 let c = new Contenedor();
 
 c.save({ 
   title: "Lápiz",
-  price: 123.45,
+  price: 123,
   thumbnail: "https://cdn3.iconfinder.com/data...",
 });
 

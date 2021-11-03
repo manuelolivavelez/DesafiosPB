@@ -1,32 +1,20 @@
 [
   {
     "title": "Escuadra",
-    "price": 123.45,
+    "price": 123,
     "thumbnail": "https://cdn3.iconfinder.com/data...",
     "id": 3
   },
   {
     "title": "Calculadora",
-    "price": 234.56,
+    "price": 234,
     "thumbnail": "https://cdn3.iconfinder.com/data...",
     "id": 2
   },
   {
     "title": "Globo Terráqueo",
-    "price": 345.67,
+    "price": 345,
     "thumbnail": "https://cdn3.iconfinder.com/data...",
     "id": 1
-  },
-  {
-    "title": "Lápiz",
-    "price": 123.45,
-    "thumbnail": "https://cdn3.iconfinder.com/data...",
-    "id": 4
-  },
-  {
-    "title": "Lápiz",
-    "price": 123.45,
-    "thumbnail": "https://cdn3.iconfinder.com/data...",
-    "id": 5
   }
 ]
