@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+        <td>
+          <img
+            src="{{this.thumbnail}}"
+            alt="{{this.thumbnail}}"
+            class="img-thumbnail"
+          />
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/">Cargar productos</a>

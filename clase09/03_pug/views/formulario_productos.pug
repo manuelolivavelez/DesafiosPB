@@ -1,0 +1,16 @@
+include index.pug
+h3 Agregar Productos 
+form(action="/productos" method="POST" class='row g-1') 
+    div(class='col-md-4')
+        label(for="title") Producto 
+        input(type="text" name="title" class="form-control")  
+    div(class='col-md-4') 
+        label(for="price") Precio 
+        input(type="number" name="price" class="form-control")  
+    div(class='col-md-6')
+        label(for="thumbnail") Imagen 
+        input(type="text" name="thumbnail" class="form-control")  
+    div 
+        input(type="submit" value="Agregar" class='btn btn-primary')  
+
+a(href="/productos")  Ver Productos

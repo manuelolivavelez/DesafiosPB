@@ -1,0 +1,21 @@
+<%- include("index") %>
+<h3>Agregar Producto</h3>
+<form action="/productos" method="POST" class="row g-1">
+  <div class="col-md-4">
+    <label for="title" class="form-label">Producto</label>
+    <input type="text" name="title" id="title" class="form-control" />
+  </div>
+  <div class="col-md-4">
+    <label for="price" class="form-label">Precio</label>
+    <input type="number" name="price" id="price" class="form-control" />
+  </div>
+  <div class="col-md-6">
+    <label for="title" class="form-label">Imagen</label>
+    <input type="text" name="thumbnail" id="thumbnail" class="form-control" />
+  </div>
+  <div>
+    <input type="submit" value="Agregar" class="btn btn-primary" />
+  </div>
+</form>
+
+<a href="/productos">Ver productos</a>

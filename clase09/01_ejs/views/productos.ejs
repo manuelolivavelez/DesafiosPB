@@ -1,0 +1,23 @@
+<%- include("index") %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach(function(pr){ %>
+    <tr>
+      <td><%= pr.title %></td>
+      <td><%= pr.price %></td>
+      <td>
+        <img src="<%= pr.thumbnail %>" alt="" class="img-thumbnail" />
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/">Cargar productos</a>
