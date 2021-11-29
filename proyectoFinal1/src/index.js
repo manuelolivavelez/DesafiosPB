@@ -6,8 +6,8 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(express.urlencoded(false));
 
-const products = require("./routes/productos");
-const cart = require("./routes/carritos");
+const products = require("./routes/products");
+const cart = require("./routes/shopCart");
 
 app.use("/api/productos", products);
 app.use("/api/carrito", cart);

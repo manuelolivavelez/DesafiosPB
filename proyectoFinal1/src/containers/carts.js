@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const Product = require("../containers/productos");
+const Product = require("../containers/product");
 const product = new Product();
 
 const writeCartFile = async (arr) => {
@@ -18,7 +18,7 @@ const readCartFile = async () => {
 
 const today = new Date(Date.now());
 
-class ContenedorCarrito {
+class Contenedor {
   constructor() {
     this.cart = [];
   }
@@ -33,7 +33,7 @@ class ContenedorCarrito {
       dataFile.push(cart);
       this.cart = dataFile;
       writeCartFile(this.cart);
-      console.log(`ID del carrito: ${cart.id}`);
+      console.log(`Carrito guardado con id:${cart.id}`);
     } else {
       cart.id = 1;
       cart.timeStamp = today;
@@ -48,8 +48,8 @@ class ContenedorCarrito {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
@@ -71,8 +71,8 @@ class ContenedorCarrito {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
@@ -86,8 +86,8 @@ class ContenedorCarrito {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
@@ -118,15 +118,15 @@ class ContenedorCarrito {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
       });
       let pr;
-      fileData[pos].producto.filter((item, index) => {
-        if (item.id == idProduct) {
+      fileData[pos].producto.filter((el, index) => {
+        if (el.id == idProduct) {
           pr = index;
         }
       });
@@ -137,4 +137,4 @@ class ContenedorCarrito {
   }
 }
 
-module.exports = ContenedorCarrito;
+module.exports = Contenedor;

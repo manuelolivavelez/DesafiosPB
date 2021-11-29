@@ -4,19 +4,19 @@ const { Router } = express;
 
 const router = new Router();
 
-const Cart = require("../containers/carritos");
+const Cart = require("../containers/carts");
 const cart = new Cart();
-const Product = require("../containers/productos");
+const Product = require("../containers/product");
 const product = new Product();
 
 router.post("/", async (req, res) => {
   await cart.save(req.body);
-  res.send("Carrito creado con exito");
+  res.send(`Carrito creado existosamente`);
 });
 
 router.delete("/:id", async (req, res) => {
   await cart.delete(req.params.id);
-  res.send(`El carrito con ID ${req.params.id} se ha borrado con exito`);
+  res.send(`Carrito ${req.params.id} borrado`);
 });
 
 router.get("/", async (req, res) => {

@@ -14,7 +14,7 @@ const verificarAutorizacion = (res) => {
 };
 
 const router = new Router();
-const Product = require("../containers/productos");
+const Product = require("../containers/product");
 const product = new Product();
 
 router.get("/:id", async (req, res) => {
@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   if (req.query.admin === "true") {
     await product.save(req.body);
-    res.send("Producto guardado con exito");
+    res.send("Producto guardado correctamente");
   }
   verificarAutorizacion(res);
 });

@@ -15,7 +15,7 @@ const readProductFile = async () => {
 
 const today = new Date(Date.now());
 
-class ContenedorProductos {
+class Contenedor {
   constructor() {
     this.product = [];
   }
@@ -29,7 +29,7 @@ class ContenedorProductos {
       dataFile.push(product);
       this.pr = dataFile;
       writeProductFile(this.pr);
-      console.log(`ID del producto: ${product.id}`);
+      console.log(`Producto guardado con id:${product.id}`);
     } else {
       product.id = 1;
       product.timeStamp = today;
@@ -43,8 +43,8 @@ class ContenedorProductos {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
@@ -66,8 +66,8 @@ class ContenedorProductos {
     if (fileExists && fileExists.length >= 0) {
       let fileData = JSON.parse(fileExists);
       let pos;
-      fileData.find((item, index, array) => {
-        if (item.id == id) {
+      fileData.find((el, index, array) => {
+        if (el.id == id) {
           pos = index;
           return pos;
         }
@@ -99,4 +99,4 @@ class ContenedorProductos {
   }
 }
 
-module.exports = ContenedorProductos;
+module.exports = Contenedor;
