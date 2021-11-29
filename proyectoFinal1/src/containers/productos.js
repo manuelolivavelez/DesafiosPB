@@ -21,7 +21,7 @@ class ContenedorProductos {
   }
 
   async save(product) {
-    let fileExits = await readProductFile(); //String
+    let fileExits = await readProductFile();
     if (fileExits && fileExits.length >= 0) {
       let dataFile = JSON.parse(fileExits);
       product.id = dataFile.length + 1;
